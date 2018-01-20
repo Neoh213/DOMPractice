@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom Manipulation Testing</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<button> Click Me </button>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+var button = document.querySelector("button");
+var body = document.querySelector("body");
+
+
+change = false;
+
+	button.addEventListener("click",function(){
+if(change){
+	document.body.style.background = "red";
+}
+else{
+	document.body.style.background = "white";
+
+}
+change = !change;
+
+
+	})
+
+
+</script>
+</body>
+</html>
