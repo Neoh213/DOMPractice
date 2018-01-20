@@ -11,6 +11,14 @@
 
 <h1>Don't Click Me  </h1>
 
+<ul>
+
+	<li>stuff  </li>
+	<li>mo stuff  </li>
+	<li>even mo stuff  </li>
+
+</ul>
+
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -21,6 +29,17 @@ var h1 = document.querySelector("h1");
 h1.addEventListener("click",function(){
 	alert("h1 was clicked!");
 })
+h1.addEventListener("click",function(){
+	h1.style.background = "orange";
+})
+var list = document.querySelectorAll("li");
+
+
+for(var i = 0; i<list.length; i++){
+	list[i].addEventListener("click",function(){
+		this.style.color = "red";
+	})
+}
 </script>
 </body>
 </html>
