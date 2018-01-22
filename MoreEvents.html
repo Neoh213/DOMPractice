@@ -3,7 +3,7 @@
 <head>
 	<title>Dom Manipulation Testing</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="todos.css">
 
 </head>
 <body>
@@ -23,21 +23,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
-var h1 = document.querySelector("h1");
-h1.addEventListener("click",function(){
-	alert("h1 was clicked!");
-})
-h1.addEventListener("click",function(){
-	h1.style.background = "orange";
-})
-var list = document.querySelectorAll("li");
 
-
-for(var i = 0; i<list.length; i++){
-	list[i].addEventListener("click",function(){
-		this.style.color = "red";
-	})
-}
 </script>
 </body>
 </html>
