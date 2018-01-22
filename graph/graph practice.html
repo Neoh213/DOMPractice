@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "graph.css">
+</head>
+<body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+
+<div id="graph" class="chart-container " style="position: relative; height:40vh width:80vw color:blue;">
+<canvas id="myChart" width="200" height="100"
+
+</canvas>
+</div>
+
+
+
+</body>
+
+
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!--GRAPH-->
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["data"],
+        datasets: [{
+            label: 'Decibel Level',
+            data: [100],
+            backgroundColor: 'rgba(247, 255, 15, 1)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+
+
+});
+
+
+</script>
+
+<script>
+//working on getting the graph to update
+var canvas= document.querySelector("canvas");
+var test = "test";
+canvas.addEventListener("mouseover", function() {
+console.log("hello");
+});
+
+
+
+var number;
+for(var i = 0; i<30; i++)
+{
+	number++;
+};
+
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+</html>
