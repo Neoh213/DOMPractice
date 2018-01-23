@@ -12,6 +12,9 @@
 
 
 <div id="graph" class="chart-container " style="position: relative; height:40vh width:80vw color:blue;">
+	<h1 id ="soundLevel" style = "color:white"></h1>
+
+
 <canvas id="myChart" width="200" height="100"
 
 </canvas>
@@ -30,6 +33,7 @@
 <!--GRAPH-->
 <script>
 var ctx = document.getElementById("myChart");
+
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
@@ -73,7 +77,7 @@ function addData(chart, data, datasetIndex) {
 var canvas= document.querySelector("canvas");
 var test = "test";
 //function to increase the graph. Will change readout to machine readout
-canvas.addEventListener("mouseover", function() {
+canvas.addEventListener("click", function() {
 addData(myChart, [readout], 0);
 if(readout <0)
 {
@@ -82,10 +86,13 @@ readout =0;
 else{
 	readout +=5;
 }
+document.getElementById("soundLevel").innerHTML = readout;
 
 });
 
-canvas.addEventListener("click", function() {
+
+
+canvas.addEventListener("mouseover", function() {
 addData(myChart, [readout], 0);
 if(readout <0)
 {
@@ -94,6 +101,7 @@ readout =0;
 else {
 	readout -=5;
 }
+document.getElementById("soundLevel").innerHTML = readout;
 
 // for(var i = 0; i<30; i++)
 // if(i>15)
@@ -109,7 +117,7 @@ else {
 
 
 
-var number;
+
 for(var i = 0; i<30; i++)
 {
 	number++;
