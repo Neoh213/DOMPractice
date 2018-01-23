@@ -7,7 +7,7 @@ var myChart = new Chart(ctx, {
         labels: ["data"],
         datasets: [{
             label: 'Decibel Level',
-            data: [100],
+            data: [50],
             backgroundColor: 'rgba(247, 255, 15, 1)',
             borderColor: 'rgba(255, 255, 255, 1)',
             borderWidth: 1
@@ -46,9 +46,9 @@ var test = "test";
 //function to increase the graph. Will change readout to machine readout
 canvas.addEventListener("click", function() {
 addData(myChart, [readout], 0);
-if(readout <0)
+if(readout >=100)
 {
-readout =0;
+readout =100;
 }
 else{
 	readout +=5;
@@ -61,7 +61,7 @@ document.getElementById("soundLevel").innerHTML = readout;
 
 canvas.addEventListener("mouseover", function() {
 addData(myChart, [readout], 0);
-if(readout <0)
+if(readout <=0)
 {
 readout =0;
 }
