@@ -1,12 +1,11 @@
 
 var ctx = document.getElementById("myChart");
+document.getElementById("soundLevel").innerHTML = 0;
 
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ["data"],
         datasets: [{
-            label: 'Decibel Level',
             data: [50],
             backgroundColor: 'rgba(247, 255, 15, 1)',
             borderColor: 'rgba(255, 255, 255, 1)',
@@ -14,6 +13,8 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: true,
         scales: {
             xAxes: [{
                 ticks: {min:0,
@@ -43,7 +44,21 @@ function addData(chart, data, datasetIndex) {
 //working on getting the graph to update
 var canvas= document.querySelector("canvas");
 var test = "test";
-//function to increase the graph. Will change readout to machine readout
+// function to increase the graph. Will change readout to machine readout
+// canvas.addEventListener("click", function() {
+// addData(myChart, [readout], 0);
+// if(readout >=100)
+// {
+// readout =100;
+// }
+// else{
+// 	readout +=5;
+// }
+//
+// document.getElementById("soundLevel").innerHTML = readout;
+//
+// });
+
 canvas.addEventListener("click", function() {
 addData(myChart, [readout], 0);
 if(readout >=100)
@@ -53,10 +68,20 @@ readout =100;
 else{
 	readout +=5;
 }
-document.getElementById("soundLevel").innerHTML = readout;
+var from = 0;
+var to = 100;
+
+
+let timerId = setInterval(function() {
+  document.getElementById("soundLevel").innerHTML = readout;
+  addData(myChart, [readout], 0);
+  if (readout == to) {
+    clearInterval(timerId);
+  }
+  readout++;
+}, 1000);
 
 });
-
 
 
 canvas.addEventListener("mouseover", function() {
@@ -85,7 +110,7 @@ document.getElementById("soundLevel").innerHTML = readout;
 
 
 
-for(var i = 0; i<30; i++)
-{
-	number++;
-};
+// for(var i = 0; i<30; i++)
+// {
+// 	number++;
+// };

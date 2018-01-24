@@ -120,3 +120,10 @@ input[type=button], input[type=submit], input[type=reset] {
 .push2{
   padding-top: 35px;
 }
+
+canvas{
+
+  width:500px !important;
+  height:300px !important;
+
+}
