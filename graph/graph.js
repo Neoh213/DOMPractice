@@ -13,6 +13,9 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+      legend: {
+           display: false
+         },
       responsive: true,
       maintainAspectRatio: true,
         scales: {
@@ -44,21 +47,25 @@ function addData(chart, data, datasetIndex) {
 //working on getting the graph to update
 var canvas= document.querySelector("canvas");
 var test = "test";
-// function to increase the graph. Will change readout to machine readout
-// canvas.addEventListener("click", function() {
-// addData(myChart, [readout], 0);
-// if(readout >=100)
-// {
-// readout =100;
-// }
-// else{
-// 	readout +=5;
-// }
-//
-// document.getElementById("soundLevel").innerHTML = readout;
-//
-// });
 
+
+/* this commented section is for debigging
+function to increase the graph. Will change readout to machine readout
+canvas.addEventListener("click", function() {
+addData(myChart, [readout], 0);
+if(readout >=100)
+{
+readout =100;
+}
+else{
+	readout +=5;
+}
+
+document.getElementById("soundLevel").innerHTML = readout;
+
+});
+
+*/
 canvas.addEventListener("click", function() {
 addData(myChart, [readout], 0);
 if(readout >=100)
@@ -79,7 +86,7 @@ let timerId = setInterval(function() {
     clearInterval(timerId);
   }
   readout++;
-}, 1000);
+}, 50);
 
 });
 
