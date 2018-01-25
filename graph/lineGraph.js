@@ -1,31 +1,49 @@
 
 var ctx = document.getElementById("myChart");
-document.getElementById("soundLevel").innerHTML = 0;
+//document.getElementById("soundLevel").innerHTML = 0;
 var progress = document.getElementById('animationProgress');
+
+//template to insert data
+var graphDataSets = [{
+  fill: false,
+  backgroundColor: 'rgba(247, 255, 15, 1)',
+  borderColor: 'rgba(247, 255, 15, 1)',
+  data: [50,40,60,20,70,80,110]
+
+}, {
+          label: "My Second dataset ",
+          fill: false,
+          borderColor: 'rgba(0, 0, 255, 1)',
+          backgroundColor: 'rgba(0, 0, 255, 1)',
+          data: [10,20,30,40,50,60,70]
+      }];
+
+      var graphDataSets2 = [{
+        fill: false,
+        backgroundColor: 'rgba(247, 255, 15, 1)',
+        borderColor: 'rgba(247, 255, 15, 1)',
+        data: [1,43,80,2,50,71,110]
+
+      }, {
+                label: "My Second dataset ",
+                fill: false,
+                borderColor: 'rgba(0, 0, 255, 1)',
+                backgroundColor: 'rgba(0, 0, 255, 1)',
+                data: [30,20,30,40,70,60,20]
+            }, {
+              fill: false,
+              backgroundColor: 'rgba(100, 200, 15, 1)',
+              borderColor: 'rgba(100, 200, 15, 1)',
+              data: [20,40,10,50,5,91,110]
+
+            },
+          ];
 
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-          fill: false,
-          backgroundColor: 'rgba(247, 255, 15, 1)',
-          borderColor: 'rgba(255, 255, 255, 1)',
-          data: [50,40,60,20,70,80,90
-
-
-          ]
-
-        }, {
-                  label: "My Second dataset ",
-                  fill: false,
-                  borderColor: 'rgba(0, 0, 255, 1)',
-                  backgroundColor: 'rgba(0, 0, 255, 1)',
-                  data: [10,20,30,40,50,60,70
-
-
-                  ]
-              }]
+        datasets: graphDataSets
             },
             options: {
                     title:{
@@ -57,10 +75,11 @@ var myChart = new Chart(ctx, {
 
 
 var readout = 5;
-// setTimeout(function() {
-//    addData(myChart, [], 0);
-// 	 console.log(readout);
-// }, 2000);
+document.getElementById('graphUpdate').addEventListener('click', function() {
+    myChart.data.datasets = graphDataSets2;
+    myChart.update();
+        });
+
 
 function addData(chart, data, datasetIndex) {
    chart.data.datasets[datasetIndex].data = data;
