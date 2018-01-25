@@ -75,6 +75,7 @@ readout =100;
 else{
 	readout +=5;
 }
+if(readout <50)
 var from = 0;
 var to = 100;
 
@@ -85,6 +86,11 @@ let timerId = setInterval(function() {
   if (readout == to) {
     clearInterval(timerId);
   }
+  //see if I can make random numbers and get the graph to run for x seconds
+  // {
+  //   myChart.data.datasets.backgroundColor = 'rgba(0, 255, 0, 1)';
+  //   myChart.update();
+  // }
   readout++;
 }, 50);
 
