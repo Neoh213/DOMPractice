@@ -38,7 +38,7 @@ var graphDataSets = [{
                 fill: false,
                 borderColor: 'rgba(0, 0, 255, 1)',
                 backgroundColor: 'rgba(0, 0, 255, 1)',
-                data: [30,20,30,40,70,60,20]
+                data: [30,20,30,40,70,60,400]
             }, {
               label: "Store3 ",
               fill: false,
