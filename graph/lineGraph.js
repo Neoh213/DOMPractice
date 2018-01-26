@@ -3,8 +3,16 @@ var ctx = document.getElementById("myChart");
 //document.getElementById("soundLevel").innerHTML = 0;
 var progress = document.getElementById('animationProgress');
 
+//find a way to dynamically create these variables
+//the colors and borders will be preset. maybe have a color assigned depending on the number of stores picked
+//the data can be inserted using an array? maybe turning the string of the table info into the appropriate data type?
+
+
+
+
 //template to insert data
 var graphDataSets = [{
+  label: "First Store ",
   fill: false,
   backgroundColor: 'rgba(247, 255, 15, 1)',
   borderColor: 'rgba(247, 255, 15, 1)',
@@ -19,18 +27,20 @@ var graphDataSets = [{
       }];
 
       var graphDataSets2 = [{
+        label: "Store1 ",
         fill: false,
         backgroundColor: 'rgba(247, 255, 15, 1)',
         borderColor: 'rgba(247, 255, 15, 1)',
         data: [1,43,80,2,50,71,110]
 
       }, {
-                label: "My Second dataset ",
+                label: "Store2 ",
                 fill: false,
                 borderColor: 'rgba(0, 0, 255, 1)',
                 backgroundColor: 'rgba(0, 0, 255, 1)',
                 data: [30,20,30,40,70,60,20]
             }, {
+              label: "Store3 ",
               fill: false,
               backgroundColor: 'rgba(100, 200, 15, 1)',
               borderColor: 'rgba(100, 200, 15, 1)',
@@ -42,13 +52,14 @@ var graphDataSets = [{
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
+
       labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: graphDataSets
             },
             options: {
                     title:{
                         display:true,
-                        text: "Chart.js Line Chart - Animation Progress Bar"
+                        text: "Store Information"
                     },
                     animation: {
                         duration: 2000,
@@ -75,6 +86,7 @@ var myChart = new Chart(ctx, {
 
 
 var readout = 5;
+//event to update the graph with the given information
 document.getElementById('graphUpdate').addEventListener('click', function() {
     myChart.data.datasets = graphDataSets2;
     myChart.update();
