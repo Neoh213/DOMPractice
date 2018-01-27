@@ -14,6 +14,10 @@ easyBtn.addEventListener("click", function(){
   alert("easy clicked");
 })
 
+hardBtn.addEventListener("click", function(){
+  alert("hard clicked");
+})
+
 resetButton.addEventListener("click", function(){
   //generate new colors
   colors = generateRandomColors(6);
