@@ -98,6 +98,17 @@ function addData(chart, data, datasetIndex) {
    chart.update();
 }
 
+document.getElementById('test').addEventListener('click', function() {
+    myChart.data.datasets = graphDataSets;
+    myChart.update();
+        });
+
+
+function addData(chart, data, datasetIndex) {
+   chart.data.datasets[datasetIndex].data = data;
+   chart.update();
+}
+
 
 //working on getting the graph to update
 var canvas= document.querySelector("canvas");
