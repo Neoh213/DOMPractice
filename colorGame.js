@@ -15,10 +15,10 @@ easyBtn.addEventListener("click", function(){
   easyBtn.classList.add("selected");
 
   colors = generateRandomColors(3);
-  pickedColor = pickedColor();
+  pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
 
-  for (var i = 0; i<square.length; i++)
+  for (var i = 0; i<squares.length; i++)
   {
     if (colors[i]){
       squares[i].style.backgroundColor = colors[i];
