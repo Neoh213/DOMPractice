@@ -11,12 +11,26 @@ var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
 easyBtn.addEventListener("click", function(){
-  alert("easy clicked");
-})
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+
+  colors = generateRandomColors(3);
+  pickedColor = pickedColor();
+  colorDisplay.textContent = pickedColor;
+
+  for (var i = 0; i<square.length; i++)
+  {
+    if (colors[i]){
+      squares[i].style.backgroundColor = colors[i];
+    }
+  }
+
+});
 
 hardBtn.addEventListener("click", function(){
-  alert("hard clicked");
-})
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+});
 
 resetButton.addEventListener("click", function(){
   //generate new colors
