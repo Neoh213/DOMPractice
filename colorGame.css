@@ -1,6 +1,7 @@
 body{
   background-color:#232323;
   margin:0;
+  font-family:"Montserrat", "Avenir";
 }
 
 .square{
@@ -20,9 +21,14 @@ margin:1.66%;
 h1{
 
   text-align: center;
+  line-height: 1.1;
   color:white;
   background: steelblue;
   margin:0;
+  font-style: normal;
+  text-transform: uppercase;
+  padding: 20px,0;
+
 }
 
 
@@ -35,4 +41,8 @@ h1{
 
 .selected {
   background:blue;
+}
+
+#colorDisplay{
+  font-size: 200%;
 }
