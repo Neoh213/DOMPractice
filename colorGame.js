@@ -12,20 +12,12 @@ init();
 
 function init(){
 //mode event listeners
-  for(var i = 0; i< modeButtons.length; i++){
-    modeButtons[i].addEventListener("click", function(){
-      modeButtons[0].classList.remove("selected");
-      modeButtons[1].classList.remove("selected");
-      this.classList.add("selected");
-      if(this.textContent ==="Easy"){
-        numSquares = 3;
-      } else {
-        numSquares = 6;
-      }
-      reset();
+setupModeButtons();
+setupSquares();
+  reset();
+}
 
-    });
-  }
+function setupSquares(){
 
   for(var i = 0; i<squares.length; i++)
   {
@@ -50,11 +42,24 @@ function init(){
       }
     });
   }
-
-  reset();
 }
 
+function setupModeButtons(){
+  for(var i = 0; i< modeButtons.length; i++){
+    modeButtons[i].addEventListener("click", function(){
+      modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      this.classList.add("selected");
+      if(this.textContent ==="Easy"){
+        numSquares = 3;
+      } else {
+        numSquares = 6;
+      }
+      reset();
 
+    });
+  }
+}
 
 function reset(){
   //generate new colors
