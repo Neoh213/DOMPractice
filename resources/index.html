@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shaw Resources</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "style.css">
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+	<!--NAVBAR-->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="index.html">Shaw U Code Resources</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="index.html">Home</a></li>
+	      <li><a href="webDevelopment.html">Web Development</a></li>
+	      <li><a href="#">coming soon</a></li>
+	      <li><a href="#">coming soon</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+<h1> Welcome to the Shaw U Student Coding Resources Page </H1>
+
+	<div class="row">
+		<div>
+		<div class="col-md-6">
+			<div class="contact-form">
+				<strong>If you need any help put send us a message using the form below</strong>
+				<form name="contact-form" method="post" action="assets/php/sendemail.php">
+					<div class="form-group">
+						<label for="InputName1">Name</label>
+						<input type="text" name="name" class="form-control" id="InputName1" required="">
+					</div>
+					<div class="form-group">
+						<label for="InputEmail1">Email</label>
+						<input type="email" name="email" class="form-control" id="InputEmail1" required="">
+					</div>
+					<div class="form-group">
+						<label for="InputSubject">Subject</label>
+						<input type="text" name="subject" class="form-control" id="InputSubject">
+					</div>
+					<div class="form-group">
+						<label for="InputTextarea">Message</label>
+						<textarea name="message" class="form-control" id="InputTextarea" rows="5" required=""></textarea>
+					</div>
+
+					<button type="submit" name="submit" class="btn btn-primary">Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+
+</html>
